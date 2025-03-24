@@ -1,5 +1,9 @@
-let template = document.getElementById("welcome-template");
-let welcomeBodyContent = template.content.cloneNode(true);
-let mainContent = document.querySelector("#main-content");
-mainContent.innerHTML = "";
-mainContent.appendChild(welcomeBodyContent);
+let $template = $("#welcome-template");
+
+let welcomeBodyContent = document.importNode($template[0].content, true);
+
+let $mainContent = $("#main-content");
+
+$mainContent.empty();
+
+$mainContent.append(welcomeBodyContent);
